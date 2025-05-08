@@ -39,16 +39,20 @@ async function calculateTime() {
     const numerator = initialTemp - outdoorTemp;
     const denominator = finalTemp - outdoorTemp;
 
-   if (isNaN(numerator) || isNaN(denominator) || denominator === 0) {
+  if (isNaN(numerator) || isNaN(denominator) || denominator === 0) {
   resultElement.textContent = "Unable to calculate — temperature data is invalid.";
 } else if (outdoorTemp >= initialTemp) {
   resultElement.textContent = "It's too warm outside to chill your beer effectively. 🍺☀️";
-} else if (numerator <= 0 || numerator / denominator <= 0) {
-  resultElement.textContent = "Beer is already at or below drinking temperature. 🍻";
 } else {
-  const time = Math.max((1 / k) * Math.log(numerator / denominator), 1); // Ensure minimum of 1 minute
-  resultElement.textContent = `Leave your beer outside for about ${Math.round(time)} minutes to reach the perfect drinking temperature. 🍻`;
+  const ratio = numerator / denominator;
+  if (ratio <= 0) {
+    resultElement.textContent = "Chilling isn't possible with current conditions.";
+  } else {
+    const time = Math.max((1 / k) * Math.log(ratio), 1); // Ensure at least 1 minute
+    resultElement.textContent = `Leave your beer outside for about ${Math.round(time)} minutes to reach the perfect drinking temperature. 🍻`;
+  }
 }
+
 
      
 
