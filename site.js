@@ -41,8 +41,8 @@ async function calculateTime() {
 
     const numerator = initialTemp - outdoorTemp;
     const denominator = finalTemp - outdoorTemp;
-
-    if (numerator <= 0 || denominator <= 0 || isNaN(numerator) || isNaN(denominator)) {
+    
+if (numerator <= 0 || denominator <= 0 || isNaN(numerator) || isNaN(denominator)) {
       resultElement.textContent = "It's already cold enough outside to chill your beer! 🍺";
     } else {
       const time = Math.max((1 / k) * Math.log(numerator / denominator), 0);
