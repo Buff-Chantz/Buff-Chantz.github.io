@@ -1,11 +1,23 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1> Holding Place for Portfolio</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beer Chilling Timer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Beer Chilling Timer 🍺</h1>
+    <input type="text" id="locationInput" placeholder="Enter your location (e.g., Tampa, FL)" />
+    <div class="toggle">
+      <input type="checkbox" id="celsiusToggle" />
+      <label for="celsiusToggle">Use Celsius</label>
+    </div>
+    <button onclick="calculateTime()">Calculate Time</button>
+    <p id="result"></p>
+  </div>
+  <script src="script.js"></script>
+</body>
 </html>
