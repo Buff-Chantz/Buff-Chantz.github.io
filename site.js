@@ -16,11 +16,9 @@ async function calculateTime() {
     const geoRes = await fetch(
       `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(location)}&limit=1&appid=${API_KEY}`
     );
-
-    if (!geoRes.ok) throw new Error("Geocoding failed.");
+    if (!geoRes.ok) throw new Error("Geocoding fetch failed.");
 
     const geoData = await geoRes.json();
-
     if (!geoData.length) throw new Error("Location not found.");
 
     const { lat, lon } = geoData[0];
@@ -29,28 +27,25 @@ async function calculateTime() {
     const weatherRes = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${API_KEY}`
     );
-
     if (!weatherRes.ok) throw new Error("Weather fetch failed.");
 
     const weatherData = await weatherRes.json();
     const outdoorTemp = weatherData.main.temp;
 
-    const initialTemp = useCelsius ? 22.2 : 72; // room temp
-    const finalTemp = useCelsius ? 7.2 : 45;    // chill temp
+    const initialTemp = useCelsius ? 22.2 : 72; // Room temperature
+    const finalTemp = useCelsius ? 7.2 : 45;    // Ideal beer drinking temp
     const k = 0.03;
 
     const numerator = initialTemp - outdoorTemp;
     const denominator = finalTemp - outdoorTemp;
-    
-if (isNaN(numerator) || isNaN(denominator) || denominator === 0) {
-  resultElement.textContent = "Unable to calculate — check the temperature data.";
-} else if (outdoorTemp >= initialTemp) {
-  resultElement.textContent = "It's too warm outside to chill your beer effectively.";
-} else {
-  const time = Math.max((1 / k) * Math.log(numerator / denominator), 0);
-  resultElement.textContent = `Leave your beer outside for about ${Math.round(time)} minutes to reach the perfect drinking temperature. 🍺`;
-}
 
+    if (isNaN(numerator) || isNaN(denominator) || denominator === 0) {
+      resultElement.textContent = "Unable to calculate — check the temperature data.";
+    } else if (outdoorTemp >= initialTemp) {
+      resultElement.textContent = "It's too warm outside to chill your beer effectively. 🍺☀️";
+    } else {
+      const time = Math.max((1 / k) * Math.log(numerator / denominator), 0);
+      resultElement.textContent = `Leave your beer outside for about ${Math.round(time)} minutes to reach the perfect drinking temperature. 🍻`;
     }
 
   } catch (error) {
