@@ -42,11 +42,15 @@ async function calculateTime() {
     const numerator = initialTemp - outdoorTemp;
     const denominator = finalTemp - outdoorTemp;
     
-if (numerator <= 0 || denominator <= 0 || isNaN(numerator) || isNaN(denominator)) {
-      resultElement.textContent = "It's already cold enough outside to chill your beer! 🍺";
-    } else {
-      const time = Math.max((1 / k) * Math.log(numerator / denominator), 0);
-      resultElement.textContent = `Leave your beer outside for about ${Math.round(time)} minutes.`;
+if (isNaN(numerator) || isNaN(denominator) || denominator === 0) {
+  resultElement.textContent = "Unable to calculate — check the temperature data.";
+} else if (outdoorTemp >= initialTemp) {
+  resultElement.textContent = "It's too warm outside to chill your beer effectively.";
+} else {
+  const time = Math.max((1 / k) * Math.log(numerator / denominator), 0);
+  resultElement.textContent = `Leave your beer outside for about ${Math.round(time)} minutes to reach the perfect drinking temperature. 🍺`;
+}
+
     }
 
   } catch (error) {
