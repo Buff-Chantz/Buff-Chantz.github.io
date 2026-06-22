@@ -27,19 +27,20 @@ z-index:10;
 
 
 nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;
+    justify-content: center;
+    padding: 30px 20px;
+    gap: 20px;
 }
+
 
 .logo {
-    height: 130px;
-}
-
-
-nav h1{
-color:#9b3048;
-letter-spacing:3px;
+    width: 350px;
+    max-width: 80%;
+    height: auto;
+    display: block;
 }
 
 
