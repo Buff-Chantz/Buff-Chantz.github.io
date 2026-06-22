@@ -2,22 +2,268 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Beer Chilling Timer</title>
-  <link rel="stylesheet" href="site.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Liquid Mercenary | Premium Bartending Services</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-    <h1>Beer Chilling Timer 🍺</h1>
-    <input type="text" id="locationInput" placeholder="Enter your location (e.g., Tampa, FL)" />
-    <div class="toggle">
-      <input type="checkbox" id="celsiusToggle" />
-      <label for="celsiusToggle">Use Celsius</label>
+
+<header>
+    <nav>
+        <h1>Liquid Mercenary</h1>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>Elevated Bartending For Unforgettable Events</h2>
+
+        <p>
+            Professional bartending services with a black-tie approach.
+            Serving Tampa Bay, from Brandon to Brooksville and along the Gulf Coast.
+        </p>
+
+        <a href="#contact" class="button">
+            Book Your Event
+        </a>
+
     </div>
-    <button onclick="calculateTime()">Calculate Time</button>
-    <p id="result"></p>
-  </div>
-  <script src="site.js"></script>
+
+</section>
+
+
+
+<section id="about">
+
+<h2>About Liquid Mercenary</h2>
+
+<p>
+Liquid Mercenary was built on decades of hospitality experience, professionalism,
+and a passion for creating memorable events.
+
+Our lead bartender brings over 20 years of bartending and management experience,
+including event work with the Left Coast chapter of the Bartenders Guild,
+supporting events such as Repeal Day celebrations and Tiki events.
+
+We provide a polished, dependable bar experience designed around your guests,
+your event, and your vision.
+</p>
+
+<p>
+Every booking includes a professional team. While Liquid Mercenary is led by an
+experienced bartender, our support team ensures smooth service, preparation,
+and cleanup from start to finish.
+</p>
+
+</section>
+
+
+
+
+<section id="services">
+
+<h2>Our Services</h2>
+
+
+<div class="cards">
+
+<div class="card">
+<h3>Private Events</h3>
+<p>
+Birthdays, anniversaries, celebrations, and gatherings where you want your guests
+to relax while we handle the bar.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Weddings</h3>
+<p>
+Professional cocktail service, setup, guest interaction, and cleanup so your
+special day runs smoothly.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Corporate Events</h3>
+<p>
+Reliable event bartending with a polished, professional presentation.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Specialty Events</h3>
+<p>
+Craft cocktails, tiki events, holiday parties, cocktail classes, and custom bar experiences.
+</p>
+</div>
+
+
+<div class="card">
+<h3>Complete Bar Support</h3>
+<p>
+We provide bartending expertise, tools, setup, breakdown, and cleanup.
+</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<section id="pricing">
+
+<h2>Packages</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>The Classic Package</h3>
+
+<p>
+Professional bartender service,
+bar tools, setup, and cleanup.
+</p>
+
+<p class="price">
+Custom Quote
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>The Premium Package</h3>
+
+<p>
+Enhanced service experience including
+craft cocktail support and event coordination.
+</p>
+
+<p class="price">
+Custom Quote
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>The Black Tie Package</h3>
+
+<p>
+A fully customized luxury bartending experience
+for weddings and high-end events.
+</p>
+
+<p class="price">
+Custom Quote
+</p>
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="contact">
+
+<h2>Request A Quote</h2>
+
+
+<form action="https://formsubmit.co/buffjeremy@gmail.com" method="POST">
+
+
+<input 
+type="text"
+name="name"
+placeholder="Your Name"
+required>
+
+
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
+
+
+<input
+type="text"
+name="event"
+placeholder="Event Type">
+
+
+<input
+type="date"
+name="date">
+
+
+<textarea
+name="message"
+placeholder="Tell us about your event"
+rows="5"></textarea>
+
+
+<input type="hidden" name="_subject"
+value="New Liquid Mercenary Booking Request">
+
+
+<button type="submit">
+Send Request
+</button>
+
+
+</form>
+
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 Liquid Mercenary | Tampa Bay Bartending Services
+</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
 </body>
 </html>
