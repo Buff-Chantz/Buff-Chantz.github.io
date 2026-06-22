@@ -1,55 +1,210 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+font-family:Georgia, serif;
 }
 
-.container {
-  max-width: 400px;
-  width: 100%;
-  padding: 2rem;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+
+body{
+background:#090909;
+color:#eee;
+line-height:1.6;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+
+
+header{
+
+background:#050505;
+border-bottom:3px solid #641b2d;
+position:sticky;
+top:0;
+z-index:10;
+
 }
 
-.toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
+
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+
 }
 
-button {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background: #007bff;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+
+nav h1{
+color:#9b3048;
+letter-spacing:3px;
 }
 
-button:disabled {
-  background: #6c757d;
+
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
 }
 
-#result {
-  margin-top: 1rem;
-  font-weight: bold;
+
+nav a{
+color:white;
+text-decoration:none;
+}
+
+
+.hero{
+
+height:90vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.9)
+),
+url("https://images.unsplash.com/photo-1514933651103-005eec06c04b");
+
+background-size:cover;
+background-position:center;
+
+}
+
+
+
+.hero h2{
+
+font-size:3rem;
+color:#b03a55;
+
+}
+
+
+
+.hero p{
+
+max-width:650px;
+margin:20px auto;
+
+}
+
+
+
+.button,
+button{
+
+background:#7a2239;
+color:white;
+padding:14px 30px;
+border:none;
+cursor:pointer;
+text-decoration:none;
+
+}
+
+
+
+section{
+
+padding:80px 10%;
+
+}
+
+
+
+section h2{
+
+text-align:center;
+margin-bottom:35px;
+color:#b03a55;
+
+}
+
+
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+
+
+.card{
+
+background:#151515;
+border:1px solid #641b2d;
+padding:30px;
+border-radius:8px;
+
+}
+
+
+
+.price{
+
+color:#b03a55;
+font-size:1.5rem;
+
+}
+
+
+
+form{
+
+max-width:600px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+
+}
+
+
+
+input, textarea{
+
+padding:15px;
+background:#111;
+border:1px solid #641b2d;
+color:white;
+
+}
+
+
+
+footer{
+
+text-align:center;
+padding:30px;
+background:#050505;
+
+}
+
+
+
+@media(max-width:700px){
+
+nav{
+
+flex-direction:column;
+
+}
+
+
+.hero h2{
+
+font-size:2rem;
+
+}
+
 }
